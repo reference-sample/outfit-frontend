@@ -1,0 +1,5 @@
+body {
+  // 适配ios底部安全区
+  padding-bottom: env(safe-area-inset-bottom);
+}
+// Vant自带安全区适配类，直接给底部导航加 class="safe-area-bottom"
