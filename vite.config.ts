@@ -1,9 +1,9 @@
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
 import { checker } from "vite-plugin-checker";
-import { createStyleImportPlugin } from 'vite-plugin-style-import'
-import { VantResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
+import { createStyleImportPlugin } from "vite-plugin-style-import";
+import { VantResolver } from "unplugin-vue-components/resolvers";
+import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
   plugins: [

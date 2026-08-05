@@ -1,5 +1,5 @@
-import autoprefixer from 'autoprefixer'
-import pxToViewport from 'postcss-px-to-viewport-8-plugin'
+import autoprefixer from "autoprefixer";
+import pxToViewport from "postcss-px-to-viewport-8-plugin";
 
 export default {
   plugins: [
@@ -8,10 +8,10 @@ export default {
       viewportWidth: 375,
       viewportHeight: 667,
       unitPrecision: 5,
-      viewportUnit: 'vw',
+      viewportUnit: "vw",
       selectorBlackList: [],
       minPixelValue: 1,
-      mediaQuery: false
-    })
-  ]
-}
+      mediaQuery: false,
+    }),
+  ],
+};
