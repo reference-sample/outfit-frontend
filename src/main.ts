@@ -3,8 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import { createPinia } from "pinia";
 // 全局样式
-import "@/assets/style/reset.scss";
-import "@/assets/style/global.scss";
+import "@/style/index.scss";
 
 const app = createApp(App);
 app.use(router);

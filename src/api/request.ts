@@ -1,27 +1,52 @@
+import type { AxiosInstance, AxiosResponse } from "axios";
 import axios from "axios";
-import { Toast } from "vant";
+import { getToken, removeToken } from "@/utils/storage";
 
-const service = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // 环境变量接口地址
+const service: AxiosInstance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 10000,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 // 请求拦截
-service.interceptors.request.use((config) => {
-  // 携带token
-  const token = localStorage.getItem("token");
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+
+service.interceptors.request.use(
+  (config) => {
+    const token = getToken();
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+
+  (error) => {
+    return Promise.reject(error);
   }
-  return config;
-});
+);
 
 // 响应拦截
+
 service.interceptors.response.use(
-  (res) => res.data,
-  (err) => {
-    Toast.fail(err.response?.data?.msg || "网络异常，请稍后重试");
-    return Promise.reject(err);
+  (response: AxiosResponse) => {
+    const res = response.data;
+    if (res.code !== 0) {
+      return Promise.reject(new Error(res.message || "请求失败"));
+    }
+    return res.data;
+  },
+
+  (error) => {
+    if (error.response) {
+      const status = error.response.status;
+      if (status === 401) {
+        removeToken();
+        // 后续这里跳登录
+      }
+    }
+
+    return Promise.reject(error);
   }
 );
 

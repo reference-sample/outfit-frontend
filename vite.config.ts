@@ -6,6 +6,16 @@ import { VantResolver } from "unplugin-vue-components/resolvers";
 import Components from "unplugin-vue-components/vite";
 
 export default defineConfig({
+  server: {
+    port: 5177,
+    proxy: {
+      "/api": {
+        target: "http://172.16.12.15:9433",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api')
+      }
+    }
+  },
   plugins: [
     vue(),
     createStyleImportPlugin({ resolvers: [VantResolver()] }),
