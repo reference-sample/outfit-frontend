@@ -1,6 +1,7 @@
-@use "./variables.scss" as *;
+// 1. 最先加载变量、混入，全局共享
+@use "./theme.scss" as *;
+@use "./mixins.scss" as *;
 
-@import "./reset.scss";
-@import "./theme.scss";
-@import "./mixins.scss";
-@import "./global.scss";
+// 2. 再加载业务样式文件
+@use "./reset.scss";
+@use "./global.scss";

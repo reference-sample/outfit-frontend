@@ -34,7 +34,9 @@ export default defineConfig({
   },
   css: {
     preprocessorOptions: {
-      scss: {},
+      scss: {
+        additionalData: `@import "@/assets/styles/variables.scss";`,
+      },
     },
   },
   build: {
