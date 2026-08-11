@@ -1,4 +1,5 @@
 // 1. 最先加载变量、混入，全局共享
+@use "./variables.scss" as *;
 @use "./theme.scss" as *;
 @use "./mixins.scss" as *;
 

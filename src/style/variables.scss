@@ -3,6 +3,8 @@
 // 姐姐·衣风录
 // ================================
 
+@use "sass:math";
+
 // Brand Color
 $primary-color: #c95b68;
 $primary-dark: #a84252;
@@ -99,9 +101,9 @@ $page-padding: 16px;
 $section-gap: 24px;
 
 // Image Ratio
-$image-ratio-card: 4 / 5;
-$image-ratio-cover: 3 / 4;
-$image-ratio-banner: 16 / 9;
+$image-ratio-card: math.div(4, 5);
+$image-ratio-cover: math.div(3, 4);
+$image-ratio-banner: math.div(16, 9);
 
 // Overlay
 $overlay-dark: rgba(0, 0, 0, 0.35);

@@ -1,3 +1,6 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
 .page {
   min-height: 100vh;
   background: $page-bg;
