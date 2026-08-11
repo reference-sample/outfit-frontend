@@ -39,5 +39,7 @@ declare module 'vue' {
     SectionTitle: typeof import('./src/components/base/SectionTitle.vue')['default']
     StatCard: typeof import('./src/components/base/StatCard.vue')['default']
     VanButton: typeof import('vant/es')['Button']
+    VanTabbar: typeof import('vant/es')['Tabbar']
+    VanTabbarItem: typeof import('vant/es')['TabbarItem']
   }
 }

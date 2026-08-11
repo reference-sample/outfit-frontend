@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
+import { getToken } from "@/utils/storage";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -20,6 +21,16 @@ const routes: RouteRecordRaw[] = [
     name: "Login",
     component: () => import("@/views/login/index.vue"),
   },
+  {
+    path: "/register",
+    name: "Register",
+    component: () => import("@/views/login/Register.vue"),
+  },
+  {
+    path: "/reset-password",
+    name: "ResetPassword",
+    component: () => import("@/views/login/ResetPassword.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -29,7 +40,7 @@ const router = createRouter({
 
 // 简单路由守卫：判断登录
 router.beforeEach((to, from, next) => {
-  const token = localStorage.getItem("token");
+  const token = getToken();
   // 需要登录的页面判断
   if (to.path === "/mine" && !token) {
     next("/login");

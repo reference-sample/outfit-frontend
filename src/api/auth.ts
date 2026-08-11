@@ -9,6 +9,13 @@ export interface RegisterParams {
   username: string;
   password: string;
   nickname: string;
+  email: string;
+}
+
+export interface ChangePasswordParams {
+  username: string;
+  password: string;
+  newPassword: string;
 }
 
 /**
@@ -28,6 +35,6 @@ export function register(data: RegisterParams) {
 /**
  * 修改密码
  */
-export function changePassword(data: any) {
+export function changePassword(data: ChangePasswordParams) {
   return request.post("/v1/auth/change-pwd", data);
 }

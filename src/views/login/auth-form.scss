@@ -1,0 +1,36 @@
+@use "@/style/variables.scss" as *;
+
+.auth-page {
+  min-height: 100vh;
+  background: #faf7f4;
+}
+
+.auth-content {
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding: 12px 20px 40px;
+}
+
+.auth-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  margin-bottom: 38px;
+}
+
+.auth-header h1 {
+  margin: 0;
+  color: $text-main;
+  font-size: 18px;
+  font-weight: $font-semibold;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  color: $text-main;
+  font-size: 26px;
+  line-height: 1;
+}
