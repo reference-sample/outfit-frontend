@@ -84,9 +84,9 @@ const notifyPending = () => showToast("章节详情待接口接入");
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 71% 30%, #f2d2ba 0 5%, transparent 5.5%),
-    radial-gradient(ellipse at 67% 65%, #8f2637 0 14%, transparent 14.5%),
-    linear-gradient(120deg, #ece8e3, #d6b7a8 52%, #87584f);
+    radial-gradient(ellipse at 71% 30%, $primary-light 0 5%, transparent 5.5%),
+    radial-gradient(ellipse at 67% 65%, $wine-color 0 14%, transparent 14.5%),
+    linear-gradient(120deg, $surface-light, $primary-light 52%, $primary-dark);
 }
 
 .cover-art::after {
@@ -96,7 +96,7 @@ const notifyPending = () => showToast("章节详情待接口接入");
   width: 28%;
   height: 75%;
   border-radius: 48% 48% 4px 4px;
-  background: linear-gradient(110deg, #4d1c29, #8e2637 60%, #351a1e);
+  background: linear-gradient(110deg, $text-main, $wine-color 60%, $primary-dark);
   content: "";
 }
 
@@ -104,7 +104,7 @@ const notifyPending = () => showToast("章节详情待接口接入");
   position: absolute;
   top: 27px;
   right: 50%;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba($text-white, 0.42);
   font-family: $title-font;
   font-size: 62px;
 }
@@ -114,8 +114,8 @@ const notifyPending = () => showToast("章节详情待接口接入");
   z-index: 1;
   width: 68%;
   padding: 30px 20px;
-  color: #fff;
-  text-shadow: 0 1px 8px rgba(63, 34, 29, 0.25);
+  color: $text-white;
+  text-shadow: 0 1px 8px rgba($text-main, 0.25);
 }
 
 .cover-content p {
@@ -158,10 +158,10 @@ const notifyPending = () => showToast("章节详情待接口接入");
   align-items: center;
   padding: 9px;
   border-radius: $radius-md;
-  background: #fff;
+  background: $card-bg;
   color: $text-main;
   text-align: left;
-  box-shadow: 0 5px 15px rgba(90, 60, 50, 0.05);
+  box-shadow: 0 5px 15px rgba($text-main, 0.05);
 }
 
 .chapter-cover {
@@ -178,7 +178,7 @@ const notifyPending = () => showToast("章节详情待接口接入");
   width: 32%;
   height: 73%;
   border-radius: 45% 45% 3px 3px;
-  background: rgba(255, 255, 255, 0.46);
+  background: rgba($text-white, 0.46);
   content: "";
 }
 
@@ -187,15 +187,15 @@ const notifyPending = () => showToast("章节详情待接口接入");
   z-index: 1;
   top: 8px;
   left: 9px;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba($text-white, 0.88);
   font-family: $title-font;
   font-size: 21px;
 }
 
-.chapter-cover--spring { background: linear-gradient(145deg, #9ab391, #e6d7a8 55%, #7e9b76); }
-.chapter-cover--city { background: linear-gradient(145deg, #5c504c, #c4b4aa 55%, #7e6e68); }
-.chapter-cover--night { background: linear-gradient(145deg, #252325, #9e5547 56%, #dfb198); }
-.chapter-cover--oriental { background: linear-gradient(145deg, #9a403d, #e5ba9b 55%, #6a3131); }
+.chapter-cover--spring { background: linear-gradient(145deg, $success, $primary-light 55%, $surface-warm); }
+.chapter-cover--city { background: linear-gradient(145deg, $text-primary, $surface-warm 55%, $text-secondary); }
+.chapter-cover--night { background: linear-gradient(145deg, $text-main, $wine-color 56%, $primary-light); }
+.chapter-cover--oriental { background: linear-gradient(145deg, $wine-color, $primary-light 55%, $primary-dark); }
 
 .chapter-content h3 {
   margin: 0;

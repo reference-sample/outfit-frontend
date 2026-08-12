@@ -22,6 +22,16 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/lookbook/index.vue"),
   },
   {
+    path: "/outfit",
+    name: "Outfit",
+    component: () => import("@/views/outfit/index.vue"),
+  },
+  {
+    path: "/outfit/:id",
+    name: "OutfitDetail",
+    component: () => import("@/views/outfit/Detail.vue"),
+  },
+  {
     path: "/login",
     name: "Login",
     component: () => import("@/views/login/index.vue"),

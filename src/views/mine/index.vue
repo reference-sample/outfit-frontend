@@ -11,7 +11,7 @@
       <div class="profile-copy">
         <h1>{{ profile.nickname }}</h1>
         <p>ID：{{ profile.id }}</p>
-        <p class="motto">优雅从容，更欣赏今天的自己。</p>
+        <p class="motto">{{ profile.motto }}</p>
       </div>
     </section>
 
@@ -52,20 +52,9 @@ import { removeToken } from "@/utils/storage";
 import { showToast } from "vant";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
+import { profile, stats } from "./mock";
 
 const router = useRouter();
-
-// 当前用户资料与统计接口尚未提供，使用设计稿占位内容展示。
-const profile = {
-  nickname: "姐姐",
-  id: "—",
-};
-
-const stats = [
-  { label: "穿搭", value: "—" },
-  { label: "衣物", value: "—" },
-  { label: "图片", value: "—" },
-];
 
 const notifyPending = () => showToast("该功能待接口接入");
 const resetPassword = () => router.push("/reset-password");
@@ -82,7 +71,7 @@ const primaryItems = computed(() => [
 ]);
 
 const secondaryItems = computed(() => [
-  { icon: "◉", label: "清除缓存", extra: "12.6M", action: notifyPending },
+  { icon: "◉", label: "清除缓存", extra: profile.cacheSize, action: notifyPending },
   { icon: "◷", label: "关于 Outfit", action: notifyPending },
 ]);
 </script>
@@ -128,11 +117,11 @@ const secondaryItems = computed(() => [
   height: 68px;
   flex: 0 0 auto;
   place-items: center;
-  border: 3px solid #fff;
+  border: 3px solid $text-white;
   border-radius: 50%;
-  background: linear-gradient(145deg, #d8a58d, #6e4940);
-  box-shadow: 0 4px 14px rgba(90, 60, 50, 0.16);
-  color: #fff;
+  background: linear-gradient(145deg, $primary-light, $primary-dark);
+  box-shadow: 0 4px 14px rgba($text-main, 0.16);
+  color: $text-white;
   font-family: $title-font;
   font-size: 25px;
 }
@@ -194,7 +183,7 @@ const secondaryItems = computed(() => [
   overflow: hidden;
   margin-top: 14px;
   border-radius: $radius-lg;
-  background: #fff;
+  background: $card-bg;
 }
 
 .menu-item {

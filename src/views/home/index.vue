@@ -81,7 +81,7 @@ const notifyPending = () => showToast("该功能待接口接入");
 }
 
 .brand {
-  color: #651a25;
+  color: $wine-color;
   font-family: $title-font;
   font-size: 29px;
   font-weight: $font-semibold;
@@ -110,7 +110,7 @@ const notifyPending = () => showToast("该功能待接口接入");
   overflow: hidden;
   height: 196px;
   border-radius: $radius-lg;
-  background: #93695b;
+  background: $primary-dark;
   box-shadow: $shadow-card;
 }
 
@@ -122,9 +122,9 @@ const notifyPending = () => showToast("该功能待接口接入");
   justify-content: flex-end;
   padding-right: 42px;
   background:
-    radial-gradient(ellipse at 68% 36%, rgba(255, 231, 207, 0.82) 0 7%, transparent 7.5%),
-    radial-gradient(ellipse at 65% 71%, #4d2929 0 17%, transparent 17.5%),
-    linear-gradient(120deg, #b5b1b4 0%, #e3c4b2 52%, #7e5144 100%);
+    radial-gradient(ellipse at 68% 36%, rgba($primary-light, 0.82) 0 7%, transparent 7.5%),
+    radial-gradient(ellipse at 65% 71%, $wine-color 0 17%, transparent 17.5%),
+    linear-gradient(120deg, $surface-light 0%, $primary-light 52%, $primary-dark 100%);
 }
 
 .hero-image::after {
@@ -134,7 +134,7 @@ const notifyPending = () => showToast("该功能待接口接入");
   width: 31%;
   height: 72%;
   border-radius: 50% 50% 4px 4px;
-  background: linear-gradient(90deg, #421f25, #751f2e 55%, #2e1c1d);
+  background: linear-gradient(90deg, $text-main, $wine-color 55%, $primary-dark);
   content: "";
 }
 
@@ -142,7 +142,7 @@ const notifyPending = () => showToast("该功能待接口接入");
   position: relative;
   z-index: 1;
   margin-right: 28%;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba($text-white, 0.42);
   font-family: $title-font;
   font-size: 74px;
 }
@@ -153,9 +153,9 @@ const notifyPending = () => showToast("该功能待接口接入");
   width: 62%;
   height: 100%;
   padding: 24px 18px;
-  color: #fff;
+  color: $text-white;
   text-align: left;
-  text-shadow: 0 1px 8px rgba(50, 28, 22, 0.3);
+  text-shadow: 0 1px 8px rgba($text-main, 0.3);
 }
 
 .hero-kicker {
@@ -184,10 +184,10 @@ const notifyPending = () => showToast("该功能待接口接入");
   margin-top: 12px;
   padding: 15px 16px;
   border-radius: $radius-md;
-  background: #fff;
+  background: $card-bg;
   color: $text-main;
   text-align: left;
-  box-shadow: 0 4px 14px rgba(90, 60, 50, 0.05);
+  box-shadow: 0 4px 14px rgba($text-main, 0.05);
 }
 
 .quote-card strong {
@@ -251,15 +251,15 @@ const notifyPending = () => showToast("该功能待接口接入");
   aspect-ratio: 0.85;
   place-items: center;
   border-radius: $radius-sm;
-  box-shadow: 0 4px 10px rgba(90, 60, 50, 0.1);
+  box-shadow: 0 4px 10px rgba($text-main, 0.1);
 }
 
 .outfit-cover::before {
   width: 42%;
   height: 72%;
   border-radius: 45% 45% 8px 8px;
-  background: rgba(36, 26, 25, 0.8);
-  box-shadow: 0 -22px 0 -12px rgba(251, 221, 196, 0.9);
+  background: rgba($text-main, 0.8);
+  box-shadow: 0 -22px 0 -12px rgba($primary-light, 0.9);
   content: "";
 }
 
@@ -267,13 +267,13 @@ const notifyPending = () => showToast("该功能待接口接入");
   position: absolute;
   right: 8px;
   bottom: 6px;
-  color: rgba(255, 255, 255, 0.86);
+  color: rgba($text-white, 0.86);
   font-size: 10px;
 }
 
-.outfit-cover--wine { background: linear-gradient(140deg, #221d1b, #93524b 55%, #e3c9b5); }
-.outfit-cover--cream { background: linear-gradient(140deg, #d5bba8, #f7eee5 55%, #aa7b66); }
-.outfit-cover--black { background: linear-gradient(140deg, #56362e, #202122 56%, #c89678); }
+.outfit-cover--wine { background: linear-gradient(140deg, $text-main, $wine-color 55%, $primary-light); }
+.outfit-cover--cream { background: linear-gradient(140deg, $surface-warm, $surface-light 55%, $primary-light); }
+.outfit-cover--black { background: linear-gradient(140deg, $text-primary, $text-main 56%, $primary-light); }
 
 .outfit-item strong {
   display: block;
@@ -295,9 +295,9 @@ const notifyPending = () => showToast("该功能待接口接入");
   margin-top: 26px;
   overflow: hidden;
   border-radius: $radius-lg;
-  background: linear-gradient(135deg, #6e3439, #bd6f70);
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(126, 38, 53, 0.18);
+  background: linear-gradient(135deg, $wine-color, $primary-color);
+  color: $text-white;
+  box-shadow: 0 8px 18px rgba($wine-color, 0.18);
 }
 
 .summary-copy {
@@ -323,7 +323,7 @@ const notifyPending = () => showToast("该功能待接口接入");
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 13px 0;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba($text-white, 0.12);
 }
 
 .summary-stats div {
@@ -331,7 +331,7 @@ const notifyPending = () => showToast("该功能待接口接入");
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba($text-white, 0.2);
 }
 
 .summary-stats div:last-child { border-right: 0; }

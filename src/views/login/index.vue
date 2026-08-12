@@ -89,9 +89,9 @@ const submit = async () => {
   justify-content: center;
   overflow: hidden;
   background:
-    linear-gradient(180deg, rgba(57, 38, 33, 0.08), rgba(57, 38, 33, 0.3)),
-    radial-gradient(circle at 72% 18%, #f5d8c2 0, transparent 28%),
-    linear-gradient(145deg, #efe3da, #c79a7f 52%, #765449);
+    linear-gradient(180deg, rgba($text-main, 0.08), rgba($text-main, 0.3)),
+    radial-gradient(circle at 72% 18%, $primary-light 0, transparent 28%),
+    linear-gradient(145deg, $surface-light, $primary-light 52%, $primary-dark);
 }
 
 .login-content {
@@ -108,19 +108,19 @@ const submit = async () => {
 }
 
 .login-content :deep(.title) {
-  color: #5d151d;
+  color: $wine-color;
   font-family: $title-font;
   font-size: 34px;
 }
 
 .login-content :deep(.subtitle) {
-  color: #563b36;
+  color: $text-primary;
 }
 
 .login-content :deep(.base-input),
 .login-content :deep(.password-input) {
-  background: rgba(255, 255, 255, 0.76);
-  border-color: rgba(255, 255, 255, 0.48);
+  background: rgba($card-bg, 0.76);
+  border-color: rgba($card-bg, 0.48);
 }
 
 .form-options {
@@ -128,7 +128,7 @@ const submit = async () => {
   justify-content: space-between;
   margin-top: -4px;
   font-size: 12px;
-  color: #fff;
+  color: $text-white;
 }
 
 .form-options a {
