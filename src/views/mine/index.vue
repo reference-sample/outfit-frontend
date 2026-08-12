@@ -11,7 +11,7 @@
       <div class="profile-copy">
         <h1>{{ profile.nickname }}</h1>
         <p>ID：{{ profile.id }}</p>
-        <p class="motto">优雅从容，更欣赏昨天的自己。</p>
+        <p class="motto">优雅从容，更欣赏今天的自己。</p>
       </div>
     </section>
 
@@ -241,6 +241,5 @@ const secondaryItems = computed(() => [
   margin: 22px auto 0;
   color: $primary-color;
   font-size: 14px;
-}
 }
 </style>

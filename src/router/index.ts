@@ -17,6 +17,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/mine/index.vue"),
   },
   {
+    path: "/lookbook",
+    name: "LookBook",
+    component: () => import("@/views/lookbook/index.vue"),
+  },
+  {
     path: "/login",
     name: "Login",
     component: () => import("@/views/login/index.vue"),
@@ -42,11 +47,12 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const token = getToken();
   // 需要登录的页面判断
-  if (to.path === "/mine" && !token) {
-    next("/login");
-  } else {
-    next();
-  }
+  // if (to.path === "/mine" && !token) {
+  //   next("/login");
+  // } else {
+  //   next();
+  // }
+  next();
 });
 
 export default router;
