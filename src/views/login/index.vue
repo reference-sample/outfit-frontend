@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { login } from "@/api/auth";
-import { setToken } from "@/utils/storage";
+import { setToken } from "@/utils/auth";
 import { showToast } from "vant";
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
@@ -37,6 +37,9 @@ import BasePage from "@/components/base/BasePage.vue";
 import BaseInput from "@/components/form/BaseInput.vue";
 import FormLogo from "@/components/form/FormLogo.vue";
 import PasswordInput from "@/components/form/PasswordInput.vue";
+
+import { useUserStore } from "@/store/user";
+const userStore = useUserStore();
 
 const loading = ref(false);
 const router = useRouter();
@@ -66,6 +69,13 @@ const submit = async () => {
     }
 
     setToken(token);
+    // 用户信息交给 Pinia
+    userStore.setUser({
+      userId: data.userId,
+      username: data.username,
+      nickname: data.nickname,
+      email: data.email,
+    });
     showToast("登录成功");
     router.replace("/home");
   } catch (error) {

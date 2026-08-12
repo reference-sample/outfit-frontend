@@ -1,6 +1,9 @@
+import { getToken, removeToken } from "@/utils/auth";
 import type { AxiosInstance, AxiosResponse } from "axios";
+import { useRouter } from "vue-router";
 import axios from "axios";
-import { getToken, removeToken } from "@/utils/storage";
+
+const router = useRouter();
 
 const service: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
@@ -27,7 +30,6 @@ service.interceptors.request.use(
 );
 
 // 响应拦截
-
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     const res = response.data;
@@ -42,7 +44,7 @@ service.interceptors.response.use(
       const status = error.response.status;
       if (status === 401) {
         removeToken();
-        // 后续这里跳登录
+        router.replace("/login");
       }
     }
 

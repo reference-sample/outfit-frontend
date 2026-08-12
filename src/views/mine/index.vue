@@ -7,10 +7,10 @@
     </header>
 
     <section class="profile-card">
-      <div class="avatar" aria-hidden="true">姐</div>
+      <div class="avatar" aria-hidden="true">{{userStore.nickname.slice(0, 2)}}</div>
       <div class="profile-copy">
-        <h1>{{ profile.nickname }}</h1>
-        <p>ID：{{ profile.id }}</p>
+        <h1>{{ userStore.nickname }}</h1>
+        <p>ID：{{ userStore.username }}</p>
         <p class="motto">{{ profile.motto }}</p>
       </div>
     </section>
@@ -48,11 +48,14 @@
 <script setup lang="ts">
 import BasePage from "@/components/base/BasePage.vue";
 import BottomTab from "@/components/base/BottomTab.vue";
-import { removeToken } from "@/utils/storage";
+import { removeToken } from "@/utils/auth";
 import { showToast } from "vant";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { profile, stats } from "./mock";
+import { useUserStore } from "@/store/user";
+const userStore = useUserStore();
+console.info(userStore);
 
 const router = useRouter();
 
@@ -60,6 +63,7 @@ const notifyPending = () => showToast("该功能待接口接入");
 const resetPassword = () => router.push("/reset-password");
 const logout = () => {
   removeToken();
+  userStore.clearUser();
   showToast("已退出登录");
   router.replace("/login");
 };

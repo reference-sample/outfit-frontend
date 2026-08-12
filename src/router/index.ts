@@ -1,5 +1,5 @@
+import { getToken } from "@/utils/auth";
 import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
-import { getToken } from "@/utils/storage";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -53,16 +53,16 @@ const router = createRouter({
   routes,
 });
 
+const whiteList = ["/register", "/login"];
 // 简单路由守卫：判断登录
 router.beforeEach((to, from, next) => {
   const token = getToken();
   // 需要登录的页面判断
-  // if (to.path === "/mine" && !token) {
-  //   next("/login");
-  // } else {
-  //   next();
-  // }
-  next();
+  if (!whiteList.includes(to.path) && !token) {
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export default router;
